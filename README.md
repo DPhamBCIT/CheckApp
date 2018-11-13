@@ -1,1 +1,1 @@
-# CheckApp succ
+# CheckApp
