@@ -1,0 +1,14 @@
+body {
+  background-color: #002138;
+}
+
+#content {
+  text-align:center;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  border: none;
+  font-size: 20pt;
+  font-family: "Calibri";
+}
