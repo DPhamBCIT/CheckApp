@@ -1,14 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+
 body {
   background-color: #002138;
+}
+
+#top {
+  width: 100%;
+}
+
+a { 
+  color: white;
+  text-decoration: none;
+}
+  
+a:hover {
+  color: orange;
+}
+
+#top_table td {
+  font-family: 'Cuprum';
+  font-size: 25pt;
+  color: #FFFFFF;
+  border: 0pt solid white;
+}
+
+#top_table td:nth-of-type(1) {
+  width: 10%;
+}
+
+#top_table td:nth-of-type(2) {
+  width: 5%;
+  align: center;
+}
+
+#top_table td:nth-of-type(3) {
+  width: 10%;
 }
 
 #content {
   text-align:center;
 }
 
+.search {
+  background-color: #ffffff;
+  width: 50%;
+  display: inline-block;
+}
+
 .search input[type=text] {
   padding: 6px;
+  height: 40px;
+  width: 81%;
   border: none;
   font-size: 20pt;
   font-family: "Calibri";
+}
+
+.search button {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.search img {
+  height: 46px;
 }
