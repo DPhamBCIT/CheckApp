@@ -2,7 +2,7 @@
 <html>
    <head>
        <meta charset = "UTF-8">
-       <title></title>
+       <title>CheckApp - Reviews</title>
         <style>            
             @import url('https://fonts.googleapis.com/css?family=Cuprum');
             body {
@@ -29,7 +29,10 @@
                 text-align: center;
                 width: 60px;
             }            
-            
+            #cell4 {
+                text-align: center;
+                width: 60px;
+            }    
             #cell1 img {
                 width: 40px;
                 height: 40px;                
@@ -65,12 +68,10 @@
 			}
 			#app_img {
 				float: center;
-				width = 300px;
-				height = 300px;
 			}
 			.rectangle {
 				height: 30px;
-				width: 400px;
+				width: 0px;
 				background-color: #FFFFFF;
 				transform:translate(30px,-50px);
 			}
@@ -125,7 +126,7 @@
                     <td id = "cell1"><img alt = "back" src = "https://www.iconsdb.com/icons/preview/white/arrow-109-xxl.png"/></td>
                     <td id = "cell2"><input type="text" value = "" id="search" placeholder=" App to search"/></td>
                     <td id = "cell3"><a href ="./Lab01-1536.html">Login</a></td>
-                    <td id = "cell3"><a href ="./Lab01-1536.html">Signup</a></td>
+                    <td id = "cell4"><a href ="./Lab01-1536.html">Signup</a></td>
                 </tr>
             </tbody>
         </table>
@@ -134,29 +135,29 @@
 				<tr>
 					<td id = "cellbody1">
 						<p><span id="title">REVIEWS</span></p>
-							<p><span id="reviewnum">_._</span><span id ="reviewtext">/5 by all users.</p>
-							<span id="bars">
-							<div class="rectangle"><p>5</p></div>
-							<div class="rectangle"><p>4</p></div>
-							<div class="rectangle"><p>3</p></div>
-							<div class="rectangle"><p>2</p></div>
-							<div class="rectangle"><p>1</p></div>
-						</span>
-					</td>
-					<td id = "cellbody3">
-						<p>How many stars do you rate this game?</p>
-						<span class="star"><img id="star1" src="./images/star.png"></div>
-						<img id="star2" src="./images/star.png"></div>
-						<img id="star3" src="./images/star.png"></div>
-						<img id="star4" src="./images/star.png"></div>
-						<img id="star5" src="./images/star.png"></div></span><br/>
-						<button class="button button1" id="submit">Submit</button>
+							<p><span id="reviewnum">?.?</span><span id ="reviewtext">/5 by all users.</span></p>
+							<div id="bars">
+							<div class="rectangle" id="bar5"><p>5</p></div>
+							<div class="rectangle" id="bar4"><p>4</p></div>
+							<div class="rectangle" id="bar3"><p>3</p></div>
+							<div class="rectangle" id="bar2"><p>2</p></div>
+							<div class="rectangle" id="bar1"><p>1</p></div>
+						</div>
 					</td>
 					<td id = "cellbody2">
+						<p>How many stars do you rate this game?</p>
+						<span class="star"><img id="star1" src="./images/star.png" alt="star">
+						<img id="star2" src="./images/star.png" alt="star">
+						<img id="star3" src="./images/star.png" alt="star">
+						<img id="star4" src="./images/star.png" alt="star">
+						<img id="star5" src="./images/star.png" alt="star"></span><br/>
+						<button class="button button1" id="submit">Submit</button>
+					</td>
+					<td id = "cellbody3">
 						<span id = "app_img">
-							<img src="https://i.pinimg.com/originals/f8/89/8e/f8898e79f66ec9545847915a2b306594.jpg">
+							<img src="https://i.pinimg.com/originals/f8/89/8e/f8898e79f66ec9545847915a2b306594.jpg" alt="app icon" width="300" height="300">
 						</span>
-						<p>Click the review score to filter between different user types.</p>
+						<p>Press the Submit button in order to add your review score to the total. Rating is calculated based on <span id="totalnum">0</span> user review(s).</p>
 					</td>
 				</tr>
 			</tbody>
@@ -164,6 +165,11 @@
 	<script>
 	var review_array = new Array();
 	var rating = 0;
+	var fives = 0;
+	var fours = 0;
+	var threes = 0;
+	var twos = 0;
+	var ones = 0;
 	
 	function edit() {
 		document.getElementById("star1").onmouseover = function() {star1hover()};
@@ -220,7 +226,8 @@
 			}
 		}
 		function starclick(num) {
-			rating = num;
+			if (num > 0)
+				rating = num;
 			starout();
 		}
 		
@@ -228,6 +235,7 @@
 		review_array.push(rating);
 		console.log(review_array);
 		average();
+		reviewBars(rating);
 		}
 		document.getElementById("submit").onclick = function() {submitReview()};
 		
@@ -238,7 +246,28 @@
 			}
 			average = average / review_array.length;
 			average = average.toFixed(1);
-			console.log(average);
+			document.getElementById("reviewnum").innerHTML=average;
+			reviewBars();
+		}
+		
+		function reviewBars(rating) {
+		var total = review_array.length;
+			if (rating == 5)
+				fives += 1;
+			else if (rating == 4)
+				fours += 1;
+			else if (rating == 3)
+				threes += 1;
+			else if (rating == 2)
+				twos += 1;
+			else if (rating == 1)
+				ones += 1;
+			document.getElementById("bar5").style.width = (400 * (fives / total)) + "px";
+			document.getElementById("bar4").style.width = (400 * (fours / total)) + "px";
+			document.getElementById("bar3").style.width = (400 * (threes / total)) + "px";
+			document.getElementById("bar2").style.width = (400 * (twos / total)) + "px";
+			document.getElementById("bar1").style.width = (400 * (ones / total)) + "px";
+			document.getElementById("totalnum").innerHTML=total;
 		}
 	
 		document.write();
