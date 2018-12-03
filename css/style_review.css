@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+            body {
+                background: #002138;
+            }
+            table{    
+                width: 100%;
+				max-width: 1080px;
+				margin: auto;
+            }
+            p {
+                font-family: 'Cuprum', sans-serif;
+                font-size: 45px;
+                color: #FFFFFF;
+            }
+            #top td {
+                font-family: 'Cuprum', sans-serif;
+                font-size: 25px;
+                color: #FFFFFF;
+                border: 0pt solid white;
+            }
+            #cell1 {
+                width: 50px;
+            }
+            #cell3 {
+                text-align: center;
+                width: 60px;
+            }            
+            #cell4 {
+                text-align: center;
+                width: 60px;
+            }    
+            #cell1 img {
+                width: 40px;
+                height: 40px;                
+            }        
+            #search {
+                background-color: #C4C4C4;
+                color: rebeccapurple;
+                font-family: 'Cuprum', sans-serif;
+                font-size: 25px;
+                width: 100%;
+                height: 27px;
+            }
+			#cellbody1 {
+                width: 33%;
+            }
+            #cellbody2 {
+                text-align: center;
+                width: 33%;
+            }
+			#cellbody3 {
+                text-align: center;
+                width: 33%;
+            }   
+			#reviewnum {
+				font-family: 'Cuprum', sans-serif;
+                font-size: 120px;
+                color: #FFFFFF;
+				width: 50px;
+			}
+			#bars {
+				font-size: 25px;
+				line-height: 0.25;
+			}
+			#app_img {
+				float: center;
+			}
+			.rectangle {
+				height: 30px;
+				width: 0px;
+				background-color: #FFFFFF;
+				transform:translate(30px,-50px);
+			}
+			.rectangle p {
+				transform:translate(-30px,10px);
+			}
+			#page {
+				border-spacing: 20px;
+			}
+			#title {
+				font-size: 90px;
+				line-height: 0.25;
+			}
+			.star img {
+				height: 50px;
+				width: 50px;
+			}
+			#star1 {
+			src: ./images/star.png;
+			}
+			.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 16px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			}
+			.submitbutton {
+			background-color: white;
+			color: black;
+			border: 2px solid #555555;
+			}
+			.submitbutton:hover {
+			background-color: orange;
+			color: white;
+			}
+            a { color: white; text-decoration: none; }
+           a:hover{color: orange;}
