@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <title>CheckApp</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="./css/style_login.css">
+    
+    <!-- login -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDC_mefT3aFXROFBI4MHle7eBvI5Rj5zG0",
+        authDomain: "nov15-27f6e.firebaseapp.com",
+        databaseURL: "https://nov15-27f6e.firebaseio.com",
+        projectId: "nov15-27f6e",
+        storageBucket: "nov15-27f6e.appspot.com",
+        messagingSenderId: "373575545421"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+  </head>
+  <body id="firebaseui-auth-container">
+  
+    <script>
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    </script>
+  
+    <header>
+      <div id="loader">Loading the login screen...</div>
+    </header>
+    
+    <div id="container">
+    
+      <div id="top">
+        <table id="top_table">
+          <tbody>
+            <tr>
+              <td id="home">
+                <div>
+                  <a class="link" href="main.html"><img alt="home" src="images/home.png"/></a>
+                </div>
+              </td>
+              <td></td>
+              <td id="login"><a class="link" href ="">Login</a></td>
+              <td id="bar">|</td>
+              <td id="signup"><a class="link" href ="">Signup</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="content">
+
+      </div>
+    
+    </div>
+    
+    <footer>
+    </footer>
+    
+    <script>
+    
+      var uiConfig = {
+        callbacks: {
+          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            // User successfully signed in.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+          },
+          uiShown: function() {
+            // The widget is rendered.
+            // Hide the loader.
+            document.getElementById('loader').style.display = 'none';
+          }
+        },
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: 'main.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: 'main.html',
+        // Privacy policy url.
+        privacyPolicyUrl: 'main.html'
+      };
+
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    
+    </script>
+    
+  </body>
+</html>

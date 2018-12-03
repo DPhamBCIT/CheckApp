@@ -4,10 +4,10 @@
   
     <title>CheckApp</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="./css/style.css">
-    
+    <link rel="stylesheet" href="./css/style_main.css">
+        
   </head>
-  <body>
+  <body id="firebaseui-auth-container">
   
     <header>
     </header>
@@ -18,9 +18,10 @@
         <table id="top_table">
           <tbody>
             <tr>
-              <td><a href ="">Login</a></td>
-              <td>|</td>
-              <td><a href ="">Signup</a></td>
+              <td></td>
+              <td id="login"><a class="link" href ="login.html">Login</a></td>
+              <td id="bar">|</td>
+              <td id="signup"><a class="link" href ="">Signup</a></td>
             </tr>
           </tbody>
         </table>
@@ -30,6 +31,7 @@
         <div id="app_name">
           <img alt="Logo" src="images/checkappoutlined_orange.png"/>
         </div>
+        <div id="quote">Find the <span>Right</span> Game</div>
         <div class="search">
           <input type="text" placeholder="Search">
           <button type="submit"><img alt="Search" src="images/search.png"/></button>

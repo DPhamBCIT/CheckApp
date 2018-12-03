@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+
+@-webkit-keyframes glow {
+  from {text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff6600, 0 0 40px #ff6600, 0 0 50px #ff6600, 0 0 60px #ff6600, 0 0 70px #ff6600;}
+  to {text-shadow: 0 0 20px #fff, 0 0 30px #ff944d, 0 0 40px #ff944d, 0 0 50px #ff944d, 0 0 60px #ff944d, 0 0 70px #ff944d, 0 0 80px #ff944d;}
+}
+
+body {
+  background-color: #002138;
+}
+
+body * {
+  border: solid 1px red;
+}
+
+#container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#top {
+  width: 100%;
+}
+
+a { 
+  color: white;
+  text-decoration: none;
+}
+  
+a.link:hover {
+  color: orange;
+}
+
+#top_table {
+  width: 100%;
+}
+
+#top_table td {
+  font-family: "Cuprum";
+  font-size: 25pt;
+  color: #FFFFFF;
+  border: 0pt solid white;
+}
+
+#top_table td:nth-of-type(1) {
+  width: auto;
+}
+
+#login {
+  width: 5%;
+}
+
+#bar {
+  width: 1%;
+}
+
+#signup {
+  width: 5%;
+}
+
+#content {
+  text-align:center;
+  padding-top: 4em;
+}
+
+#quote {
+  color: white;
+  font-family: "Cuprum";
+  font-size: 25pt;
+  margin: 0.3em;
+}
+
+#quote span {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.search {
+  background-color: #ffffff;
+  width: 50%;
+  display: inline-block;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  height: 40px;
+  width: 81%;
+  border: none;
+  font-size: 20pt;
+  font-family: "Calibri";
+}
+
+.search button {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.search img {
+  height: 46px;
+}

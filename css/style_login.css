@@ -4,6 +4,15 @@ body {
   background-color: #002138;
 }
 
+body * {
+  border: solid 1px red;
+}
+
+#container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 #top {
   width: 100%;
 }
@@ -13,32 +22,56 @@ a {
   text-decoration: none;
 }
   
-a:hover {
+a.link:hover {
   color: orange;
 }
 
+#top_table {
+  width: 100%;
+}
+
 #top_table td {
-  font-family: 'Cuprum';
+  font-family: "Cuprum";
   font-size: 25pt;
   color: #FFFFFF;
   border: 0pt solid white;
 }
 
-#top_table td:nth-of-type(1) {
+#home {
   width: 10%;
+  padding: 0;
+}
+
+#home div {
+  position: relative;
+  height: 1em;
+}
+
+#home img {
+  position: relative;
+  height: 1em;
+  margin: 0;
 }
 
 #top_table td:nth-of-type(2) {
-  width: 5%;
-  align: center;
+  width: auto;
 }
 
-#top_table td:nth-of-type(3) {
-  width: 10%;
+#login {
+  width: 5%;
+}
+
+#bar {
+  width: 1%;
+}
+
+#signup {
+  width: 5%;
 }
 
 #content {
   text-align:center;
+  padding-top: 4em;
 }
 
 .search {
