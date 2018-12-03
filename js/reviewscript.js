@@ -7,11 +7,11 @@
 	var ones = 0;
 	
 	function edit() {
-		document.getElementById("star1").onmouseover = function() {star1hover()};
-		document.getElementById("star2").onmouseover = function() {star2hover()};
-		document.getElementById("star3").onmouseover = function() {star3hover()};
-		document.getElementById("star4").onmouseover = function() {star4hover()};
-		document.getElementById("star5").onmouseover = function() {star5hover()};
+		document.getElementById("star1").onmouseover = function() {starhover(1)};
+		document.getElementById("star2").onmouseover = function() {starhover(2)};
+		document.getElementById("star3").onmouseover = function() {starhover(3)};
+		document.getElementById("star4").onmouseover = function() {starhover(4)};
+		document.getElementById("star5").onmouseover = function() {starhover(5)};
 		
 		document.getElementById("star1").onmouseout = function() {starout()};
 		document.getElementById("star2").onmouseout = function() {starout()};
@@ -24,25 +24,25 @@
 		document.getElementById("star3").onclick = function() {starclick(3)};
 		document.getElementById("star4").onclick = function() {starclick(4)};
 		document.getElementById("star5").onclick = function() {starclick(5)};
-		function star1hover() {
-			document.getElementById("star1").src="./images/starfill.png";
-		}
-		function star2hover() {
-			document.getElementById("star2").src="./images/starfill.png";
-			star1hover();
-		}
-		function star3hover() {
-			document.getElementById("star3").src="./images/starfill.png";
-			star2hover();
-		}
-		function star4hover() {
-			document.getElementById("star4").src="./images/starfill.png";
-			star3hover();
-		}
-		function star5hover() {
+		
+		function starhover(num) {
+			if (num > 4) {
 			document.getElementById("star5").src="./images/starfill.png";
-			star4hover();
+			}
+			if (num > 3) {
+			document.getElementById("star4").src="./images/starfill.png";
+			}
+			if (num > 2) {
+			document.getElementById("star3").src="./images/starfill.png";
+			}
+			if (num > 1) {
+			document.getElementById("star2").src="./images/starfill.png";
+			}
+			if (num > 0) {
+			document.getElementById("star1").src="./images/starfill.png";
+			}
 		}
+		
 		function starout() {
 			if (rating < 5) {
 				document.getElementById("star5").src="./images/star.png";
@@ -53,13 +53,14 @@
 						if (rating < 2) {
 							document.getElementById("star2").src="./images/star.png";
 							if (rating < 1) {
-								document.getElementById("star3").src="./images/star.png";
+								document.getElementById("star1").src="./images/star.png";
 							}
 						}
 					}
 				}
 			}
 		}
+		
 		function starclick(num) {
 			if (num > 0)
 				rating = num;
@@ -67,10 +68,9 @@
 		}
 		
 		function submitReview() {
-		review_array.push(rating);
-		console.log(review_array);
-		average();
-		reviewBars(rating);
+			review_array.push(rating);
+			average();
+			reviewBars(rating);
 		}
 		document.getElementById("submit").onclick = function() {submitReview()};
 		
