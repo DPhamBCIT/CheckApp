@@ -1,32 +1,43 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <title>Overview</title>
+  <head>
+    <meta charset = "UTF-8">
+    <title>Overview</title>
 		<style>			
 			@import url('https://fonts.googleapis.com/css?family=Cuprum');
-			body {
+			
+      body {
 				background: #002138;	
 			}
+      
+      #container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      
 			table{							
 				width: 100%;				
 			}
-			#rec {
+			
+      #rec {
 				margin: auto;
 				width: 95%;	
 			}
-			p {
+			
+      p {
 				font-family: 'Cuprum', sans-serif;
 				font-size: 30px;
 				color: #FFFFFF;					
 			}
-			.headers {
+			
+      .headers {
 				position: relative;
 				text-align: left;
 				top: -18px;
 				left: 20px;
 			}			
-			#icons {				
+			
+      #icons {				
 				width: 150px;
 				height: 150px;				
 				position: relative;				
@@ -34,55 +45,82 @@
 				margin-left: 15px;
 				top: -180px;		
 			}			
-			#rec td {				
-				border-radius: 5%;
+			
+      #rec td {				
+				border-radius: 1em;
 				background-color: lightslategray;
 			}
-			.recApp {
+			
+      .recApp {
 				position: relative;
 				top: 3px;				
 				width: 100px;
 				height: 100px;								
 			}	
-			#top td {
-				font-family: 'Cuprum', sans-serif;
-				font-size: 25px;
+			
+      #top td {
+				font-family: "Cuprum";
+				font-size: 25pt;
 				color: #FFFFFF;				
 			}
-			#ratings{
+			
+      #ratings{
 				font-size: 85px;
 				position: relative;
 				top: -130px;
 				left: 15px;				
 				margin-top: 125px;
 			}
-			.outer {
+			
+      .outer {
 				font-family: 'Cuprum', sans-serif;
 				font-size: 23px;
 				color: #FFFFFF;
 				border: 1.5pt solid white;				
-				border-radius: 5%;
+				border-radius: 1em;
 				position: relative;				
 				text-align: right;				
 				width: 50%;
 				top: -35px;				
-			}				
+			}
+      
 			.inner p{
 				position: relative;				
 				text-align: left;			
 				top: -100px;
-			}						
-			#cell1 {
+			}
+      
+			#home {
 				width: 50px;
 			}
-			.cell3 {
-				text-align: center;
-				width: 65px;
-			}						
-			#cell1 img {
-				width: 40px;
-				height: 40px;				
-			}		
+      
+      #home div {
+        position: relative;
+        height: 1em;
+      }
+      
+			#home img {	
+        position: relative;
+        height: 1em;
+        margin: 0;        
+			}
+
+      #top_table td:nth-of-type(2) {
+        width: auto;
+      }
+
+      #login {
+        width: 5%;
+      }
+
+      #bar {
+        width: 1%;
+      }
+
+      #signup {
+        width: 5%;
+      }
+      
 			#search {				
 				font-family: 'Cuprum', sans-serif;
 				font-size: 25px;
@@ -91,106 +129,117 @@
 				width: 99%;
 				height: 27px;
 			}
+      
 			#notif {
 				font-size: 35px;
 				position: relative;
 				top: -35px;
-			}						
+			}
+      
 			a { color: white; text-decoration: none; }
-            a:hover{color: orange;}			
+      
+      a:hover{color: orange;}
+      
 		</style>
-    </head>
-    <body>
-        <table id = "top" >
-			<tbody>
-				<tr>
-					<td id = "cell1"><img alt = "ayy" src = "https://www.iconsdb.com/icons/download/white/home-5-128.png"/></td>
-					<td id = "cell2"><input type="text" value = "potato" id="search" placeholder=" App to search"/></td>
-					<td class = "cell3"><a href ="./Lab01-1536.html">Login</a></td>
-					<td class = "cell3"><a href ="./Lab01-1536.html">Signup</a></td>
-				</tr>
-			</tbody>
-		</table>
-		
-		<div>
-			<p class = "headers">OVERVIEW</p>
-			<table id = "app">				
-				<tr>
-					<td class = "outer">
-						<p class = "headers">Info</p>
-						<table class = "info">
-							<tr>
-								<td class = "inner">
-									<img alt = "appName" id = "icons" src = "https://apprecs.org/gp/images/app-icons/300/a7/com.herocraft.game.majesty.ne.freemium.jpg"/>
-								</td>
-								<td class = "inner">
-									<p>MAJESTY</p>
-									<p><i>Strategy, Hero, Tower Defense</i></p>
-								</td>
-							</tr>
-						</table>						
-					</td>					
-					<td class = "outer">
-						<p class = "headers">Ratings/ Reviews</p>
-						<table class = "info">
-							<tr>		
-								<td class = "inner">
-									<p id = "ratings">4/5</p>
-								</td>
-								<td class = "inner">	
-									<p><i>“Game is good”</i></p>
-									<p><i>“Fair and balance”</i></p>		
-								</td>
-							</tr>
-						</table>
-						<a href ="./review.html">More info</a>
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<div>
-			<p class = "headers">ITEM OF THE MONTH</p>
-			<p id = "notif">WIP</p>
-		</div>
-		
-		<div>
-			<p class = "headers">RECOMMENDED APPS</p>
-			<table id = "apps">				
-				<tr>
-					<td class = "outer">
-						<a href ="./Lab01-1536.html">More info</a>
-						<table id = "rec">
-							<tr>
-								<td>	
-									<img alt = "appName" class = "recApp" id = "recApp1" src = "http://images.appspy.com/q/product_icons/473056/473056_180.jpg"/>				Zenonia 3	
-								</td>						
-								<td>						
-									<img alt = "appName" class = "recApp" id = "recApp2" src = "https://apprecs.org/ios/images/app-icons/256/40/345293120.jpg"/>						
-									The Quest Gold
-								</td>
-								<td>									
-									<img alt = "appName" class = "recApp" id = "recApp3" src = "http://images.appspy.com/q/product_icons/278972/278972_180.jpg"/>				Caligo chaser	
-								</td>
-							</tr>
-						</table>						
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-			apiKey: "AIzaSyBvI9C9xDjGb5c8exGw5OiNduMWQFf-0dY",
-			authDomain: "checkapp-data.firebaseapp.com",
-			databaseURL: "https://checkapp-data.firebaseio.com",
-			projectId: "checkapp-data",
-			storageBucket: "checkapp-data.appspot.com",
-			messagingSenderId: "385146664281"
-		  };
-		  firebase.initializeApp(config);
-		</script>
-    </body>
+  </head>
+  <body>
+    <div id="container">
+      <table id = "top" >
+        <tbody>
+          <tr>
+            <td id = "home">
+              <div>
+                <a class="link" href="main.html"><img alt="home" src = "images/home.png"/></a>
+              </div>
+            </td>
+            <td id="cell2"><input type="text" value = "potato" id="search" placeholder=" App to search"/></td>
+            <td id="login"><a class="link" href ="login.html">Login</a></td>
+            <td id="bar">|</td>
+            <td id="signup"><a class="link" href ="./Lab01-1536.html">Signup</a></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div>
+        <p class = "headers">OVERVIEW</p>
+        <table id = "app">				
+          <tr>
+            <td class = "outer">
+              <p class = "headers">Info</p>
+              <table class = "info">
+                <tr>
+                  <td class = "inner">
+                    <img alt = "appName" id = "icons" src = "https://apprecs.org/gp/images/app-icons/300/a7/com.herocraft.game.majesty.ne.freemium.jpg"/>
+                  </td>
+                  <td class = "inner">
+                    <p>MAJESTY</p>
+                    <p><i>Strategy, Hero, Tower Defense</i></p>
+                  </td>
+                </tr>
+              </table>						
+            </td>					
+            <td class = "outer">
+              <p class = "headers">Ratings/ Reviews</p>
+              <table class = "info">
+                <tr>		
+                  <td class = "inner">
+                    <p id = "ratings">4/5</p>
+                  </td>
+                  <td class = "inner">	
+                    <p><i>“Game is good”</i></p>
+                    <p><i>“Fair and balance”</i></p>		
+                  </td>
+                </tr>
+              </table>
+              <a href ="./review.html">More info</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <div>
+        <p class = "headers">ITEM OF THE MONTH</p>
+        <p id = "notif">WIP</p>
+      </div>
+      
+      <div>
+        <p class = "headers">RECOMMENDED APPS</p>
+        <table id = "apps">				
+          <tr>
+            <td class = "outer">
+              <a href ="./Lab01-1536.html">More info</a>
+              <table id = "rec">
+                <tr>
+                  <td>	
+                    <img alt = "appName" class = "recApp" id = "recApp1" src = "http://images.appspy.com/q/product_icons/473056/473056_180.jpg"/>				Zenonia 3	
+                  </td>						
+                  <td>						
+                    <img alt = "appName" class = "recApp" id = "recApp2" src = "https://apprecs.org/ios/images/app-icons/256/40/345293120.jpg"/>						
+                    The Quest Gold
+                  </td>
+                  <td>									
+                    <img alt = "appName" class = "recApp" id = "recApp3" src = "http://images.appspy.com/q/product_icons/278972/278972_180.jpg"/>				Caligo chaser	
+                  </td>
+                </tr>
+              </table>						
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyBvI9C9xDjGb5c8exGw5OiNduMWQFf-0dY",
+        authDomain: "checkapp-data.firebaseapp.com",
+        databaseURL: "https://checkapp-data.firebaseio.com",
+        projectId: "checkapp-data",
+        storageBucket: "checkapp-data.appspot.com",
+        messagingSenderId: "385146664281"
+        };
+        firebase.initializeApp(config);
+      </script>
+    </div>
+  </body>
 </html>
