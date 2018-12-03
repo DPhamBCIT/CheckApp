@@ -6,10 +6,12 @@
         <style>            
             @import url('https://fonts.googleapis.com/css?family=Cuprum');
             body {
-                background: #002138; 
+                background: #002138;
             }
             table{    
                 width: 100%;
+				max-width: 1080px;
+				margin: auto;
             }
             p {
                 font-family: 'Cuprum', sans-serif;
@@ -135,7 +137,7 @@
 				<tr>
 					<td id = "cellbody1">
 						<p><span id="title">REVIEWS</span></p>
-							<p><span id="reviewnum">?.?</span><span id ="reviewtext">/5 by all users.</span></p>
+							<p><span id="reviewnum">?.?</span><span id ="reviewtext">/5 stars</span></p>
 							<div id="bars">
 							<div class="rectangle" id="bar5"><p>5</p></div>
 							<div class="rectangle" id="bar4"><p>4</p></div>
@@ -157,122 +159,13 @@
 						<span id = "app_img">
 							<img src="https://i.pinimg.com/originals/f8/89/8e/f8898e79f66ec9545847915a2b306594.jpg" alt="app icon" width="300" height="300">
 						</span>
-						<p>Press the Submit button in order to add your review score to the total. Rating is calculated based on <span id="totalnum">0</span> user review(s).</p>
+						<p>Press the Submit button in order to add your review score to the total. Rating is based on <span id="totalnum">0</span> user review(s).</p>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-	<script>
-	var review_array = new Array();
-	var rating = 0;
-	var fives = 0;
-	var fours = 0;
-	var threes = 0;
-	var twos = 0;
-	var ones = 0;
-	
-	function edit() {
-		document.getElementById("star1").onmouseover = function() {star1hover()};
-		document.getElementById("star2").onmouseover = function() {star2hover()};
-		document.getElementById("star3").onmouseover = function() {star3hover()};
-		document.getElementById("star4").onmouseover = function() {star4hover()};
-		document.getElementById("star5").onmouseover = function() {star5hover()};
-		
-		document.getElementById("star1").onmouseout = function() {starout()};
-		document.getElementById("star2").onmouseout = function() {starout()};
-		document.getElementById("star3").onmouseout = function() {starout()};
-		document.getElementById("star4").onmouseout = function() {starout()};
-		document.getElementById("star5").onmouseout = function() {starout()};
-		
-		document.getElementById("star1").onclick = function() {starclick(1)};
-		document.getElementById("star2").onclick = function() {starclick(2)};
-		document.getElementById("star3").onclick = function() {starclick(3)};
-		document.getElementById("star4").onclick = function() {starclick(4)};
-		document.getElementById("star5").onclick = function() {starclick(5)};
-		function star1hover() {
-			document.getElementById("star1").src="./images/starfill.png";
-		}
-		function star2hover() {
-			document.getElementById("star2").src="./images/starfill.png";
-			star1hover();
-		}
-		function star3hover() {
-			document.getElementById("star3").src="./images/starfill.png";
-			star2hover();
-		}
-		function star4hover() {
-			document.getElementById("star4").src="./images/starfill.png";
-			star3hover();
-		}
-		function star5hover() {
-			document.getElementById("star5").src="./images/starfill.png";
-			star4hover();
-		}
-		function starout() {
-			if (rating < 5) {
-				document.getElementById("star5").src="./images/star.png";
-				if (rating < 4) {
-					document.getElementById("star4").src="./images/star.png";
-					if (rating < 3) {
-						document.getElementById("star3").src="./images/star.png";
-						if (rating < 2) {
-							document.getElementById("star2").src="./images/star.png";
-							if (rating < 1) {
-								document.getElementById("star3").src="./images/star.png";
-							}
-						}
-					}
-				}
-			}
-		}
-		function starclick(num) {
-			if (num > 0)
-				rating = num;
-			starout();
-		}
-		
-		function submitReview() {
-		review_array.push(rating);
-		console.log(review_array);
-		average();
-		reviewBars(rating);
-		}
-		document.getElementById("submit").onclick = function() {submitReview()};
-		
-		function average() {
-		var average = 0;
-		for (var i = 0; i < review_array.length; i++) {
-			average = average + review_array[i];
-			}
-			average = average / review_array.length;
-			average = average.toFixed(1);
-			document.getElementById("reviewnum").innerHTML=average;
-			reviewBars();
-		}
-		
-		function reviewBars(rating) {
-		var total = review_array.length;
-			if (rating == 5)
-				fives += 1;
-			else if (rating == 4)
-				fours += 1;
-			else if (rating == 3)
-				threes += 1;
-			else if (rating == 2)
-				twos += 1;
-			else if (rating == 1)
-				ones += 1;
-			document.getElementById("bar5").style.width = (400 * (fives / total)) + "px";
-			document.getElementById("bar4").style.width = (400 * (fours / total)) + "px";
-			document.getElementById("bar3").style.width = (400 * (threes / total)) + "px";
-			document.getElementById("bar2").style.width = (400 * (twos / total)) + "px";
-			document.getElementById("bar1").style.width = (400 * (ones / total)) + "px";
-			document.getElementById("totalnum").innerHTML=total;
-		}
-	
-		document.write();
-	}
-	edit();
-	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+	<script type="text/javascript" src="./js/firebaseinitialize.js"></script>
+	<script type="text/javascript" src="js/reviewscript.js"></script>
     </body>
 </html>
