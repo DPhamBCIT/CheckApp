@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+      		body {
+				background: #002138;	
+			}
+      
+			#container {
+				max-width: 1280px;
+				margin: 0 auto;
+			}
+
+			#top {
+				width: 100%;
+			}
+      
+			table{							
+				width: 100%;				
+			}
+			
+      		#rec {
+				margin: auto;
+				width: 95%;	
+			}
+			
+      		p {
+				font-family: 'Cuprum', sans-serif;
+				font-size: 30px;
+				color: #FFFFFF;					
+			}
+			
+      		.headers {
+				position: relative;
+				text-align: left;
+				top: -18px;
+				left: 20px;
+			}			
+			
+      		#icons {				
+				width: 150px;
+				height: 150px;				
+				position: relative;				
+				margin-top: 180px;
+				margin-left: 15px;
+				top: -180px;		
+			}			
+			
+      		#rec td {				
+				border-radius: 1em;
+				background-color: lightslategray;
+			}
+			
+      		.recApp {
+				position: relative;
+				top: 3px;				
+				width: 100px;
+				height: 100px;								
+			}	
+			
+      		#top_table td {
+				font-family: "Cuprum";
+				font-size: 25pt;
+				color: #FFFFFF;				
+			}
+			
+      		#ratings{
+				font-size: 85px;
+				position: relative;
+				top: -130px;
+				left: 15px;				
+				margin-top: 125px;
+			}
+			
+      		.outer {
+				font-family: 'Cuprum', sans-serif;
+				font-size: 23px;
+				color: #FFFFFF;
+				border: 1.5pt solid white;				
+				border-radius: 1em;
+				position: relative;				
+				text-align: right;				
+				width: 50%;
+				top: -35px;				
+			}
+      
+			.inner p{
+				position: relative;				
+				text-align: left;			
+				top: -100px;
+			}
+      
+			#home {
+				width: 50px;
+			}
+      
+			#home div {
+				position: relative;
+				height: 1em;
+			}
+
+			#home img {	
+				position: relative;
+				height: 1em;
+				margin: 0;        
+			}
+
+ 			#top_table td:nth-of-type(2) {
+ 				width: auto;
+ 			}
+
+      		#login {
+				width: 5%;
+			}
+
+			#bar {
+				width: 1%;
+			}
+
+			#signup {
+				width: 5%;
+			}
+      
+			#search {				
+				font-family: 'Cuprum', sans-serif;
+				font-size: 25px;
+				color: rebeccapurple;	
+				background-color: #C4C4C4;
+				width: 99%;
+				height: 27px;
+			}
+
+			#notif {
+				font-size: 35px;
+				position: relative;
+				top: -35px;
+			}
+      
+			a { color: white; text-decoration: none; }
+      		a:hover{color: orange;}
