@@ -57,6 +57,14 @@ a.link:hover {
   width: auto;
 }
 
+#search {				
+  font-family: 'Cuprum';
+  font-size: 20pt;
+  color: rebeccapurple;	
+  background-color: #C4C4C4;
+  width: 98%;
+}
+
 #login {
   width: 5%;
 }
@@ -70,32 +78,8 @@ a.link:hover {
 }
 
 #content {
-  text-align:center;
-  padding-top: 4em;
-}
-
-.search {
-  background-color: #ffffff;
-  width: 50%;
-  display: inline-block;
-}
-
-.search input[type=text] {
-  padding: 6px;
-  height: 40px;
-  width: 81%;
-  border: none;
-  font-size: 20pt;
-  font-family: "Calibri";
-}
-
-.search button {
-  background-color: #ffffff;
-  border: none;
-  cursor: pointer;
-  vertical-align: top;
-}
-
-.search img {
-  height: 46px;
+  font-family: "Cuprum";
+  font-size: 45pt;
+  color: #FFFFFF;
+  margin-top: 1em;
 }
