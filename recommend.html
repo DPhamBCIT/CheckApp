@@ -48,11 +48,11 @@
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon1.jpg"/>
-                  <div id="app1"></div>
+                  <div  id = "app1">66</div>
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon2.jpg"/>
-                  <div>Cool App</div>
+                  <div id = "app2"></div>
                 </td>
                 <td class="nav_holder" rowspan="2">
                   <div>
@@ -137,10 +137,13 @@
       };
       firebase.initializeApp(config);
       
-      var app1 = document.getElementByID("app1");
-      var appRef1 = firebase.database().ref().child('recGame').child('game1').child('name');
-      appRef1.on('value', snap => app1.innerText = snap.val());
-    </script>
+      var app1 = document.getElementById("app1");
+		var app2 = document.getElementById("app2");
+		var aRef = firebase.database().ref().child('recGame').child("game1").child("name");
+		var aRef2 = firebase.database().ref().child('recGame').child("game2").child("name");
+		aRef.on('value', snap => app1.innerText = snap.val());
+		aRef2.on('value', snap => app2.innerText = snap.val());
     
+    </script>
   </body>
 </html>
