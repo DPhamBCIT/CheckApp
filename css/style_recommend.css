@@ -37,20 +37,32 @@ a.link:hover {
   border: 0pt solid white;
 }
 
-#home {
+#back {
   width: 4%;
   padding: 0;
 }
 
-#home div {
+#back div {
   position: relative;
   height: 1em;
 }
 
-#home img {
+#back img {
   position: relative;
   height: 1em;
   margin-right: 0.3em;
+}
+
+.img_hover {
+  display: none;
+}
+
+#back a:hover .img_hover {
+  display: inline-block;
+}
+
+#back a:hover .img_normal {
+  display: none;
 }
 
 #top_table td:nth-of-type(2) {
@@ -79,7 +91,58 @@ a.link:hover {
 
 #content {
   font-family: "Cuprum";
-  font-size: 45pt;
   color: #FFFFFF;
+  margin-top: 3em;
+}
+
+#heading {
+  font-size: 45pt;
+}
+
+.subheading {
   margin-top: 1em;
+  font-size: 25pt;
+}
+
+#free, #paid {
+  margin-top: 1em;
+  border: solid 4px white;
+  border-radius: 2em;
+}
+
+#table_free, #table_paid {
+  width: 100%;
+  font-size: 25pt;
+  border-collapse: separate;
+  border-spacing: 0.3em;
+}
+
+.nav_holder {
+  width: 5%;
+  padding: 0 0.3em;
+}
+
+.nav_holder img {
+  width: 0.7em;
+  height: 7em;
+}
+
+a.navigate:hover .img_hover {
+  display: inline-block;
+}
+
+a.navigate:hover .img_normal {
+  display: none;
+}
+
+.apps {
+  width: 40%;
+}
+
+.apps img {
+  float: left;
+  height: 3.5em;
+  width: 3.5em;
+  margin-right: 1em;
+  border-radius: 0.5em;
 }
