@@ -3,7 +3,7 @@
    <head>
        <meta charset = "UTF-8">
        <title>CheckApp - Reviews</title>
-        <link rel="stylesheet" ref="css" href="./css/style_review.css">
+        <link rel="stylesheet" href="./css/style_review.css">
    </head>
    <body>
        <table id = "top" >
@@ -51,6 +51,10 @@
 	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 	<script type="text/javascript" src="./js/firebaseinitialize.js"></script>
 	<script>
+		var gameName = firebase.auth().recGame.uid;
+		return firebase.database().ref('/game1/' + name).once('value').then(function(snapshot) {
+		document.getElementById("title").innerHTML = "REVIEWS FOR " + gameName;
+		
 		var review_array = new Array();
 		var rating = 0;
 		var fives = 0;
