@@ -123,16 +123,21 @@ p {
   width: auto;
 }
 
-#login {
-  width: 5%;
+#user {
+  width: 15%;
 }
 
 #bar {
   width: 1%;
 }
 
-#signup {
+#login {
   width: 5%;
+}
+
+#logout {
+  width: 5%;
+  display: none;
 }
 
 #search {
