@@ -68,9 +68,11 @@
 		}
 		
 		function submitReview() {
+			if (rating > 0) {
 			review_array.push(rating);
 			average();
 			reviewBars(rating);
+			}
 		}
 		document.getElementById("submit").onclick = function() {submitReview()};
 		
