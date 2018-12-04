@@ -46,11 +46,11 @@
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon1.jpg"/>
-                  <div id = "app1">66</div>
+                  <div id="app1"></div>
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon2.jpg"/>
-                  <div id = "app2"></div>
+                  <div id="app2"></div>
                 </td>
                 <td class="nav_holder" rowspan="2">
                   <div>
@@ -64,11 +64,11 @@
               <tr>
                 <td class="apps">
                   <img alt="App" src="images/app_icon3.jpg"/>
-                  <div id = "app3"></div>
+                  <div id="app3"></div>
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon4.jpg"/>
-                  <div>Cool App</div>
+                  <div id="app4"></div>
                 </td>
               </tr>
             </tbody>
@@ -138,12 +138,15 @@
 		var app1 = document.getElementById("app1");
 		var app2 = document.getElementById("app2");
 		var app3 = document.getElementById("app3");
-		var aRef = firebase.database().ref().child('recGame').child("game1").child("name");
+    var app4 = document.getElementById("app4");
+		var aRef1 = firebase.database().ref().child('recGame').child("game1").child("name");
 		var aRef2 = firebase.database().ref().child('recGame').child("game2").child("name");
 		var aRef3 = firebase.database().ref().child('recGame').child("game3").child("name");
-		aRef.on('value', snap => app1.innerText = snap.val());
+    var aRef4 = firebase.database().ref().child('recGame').child("game3").child("name");
+		aRef1.on('value', snap => app1.innerText = snap.val());
 		aRef2.on('value', snap => app2.innerText = snap.val());
 		aRef3.on('value', snap => app3.innerText = snap.val());
+    aRef4.on('value', snap => app3.innerText = snap.val());
 		  
       </script>
   </body>
