@@ -70,7 +70,7 @@ a.link:hover {
 }
 
 #search {				
-  font-family: "Cuprum";
+  font-family: 'Cuprum';
   font-size: 20pt;
   color: rebeccapurple;	
   background-color: #C4C4C4;
@@ -112,7 +112,7 @@ a.link:hover {
 
 #table_free, #table_paid {
   width: 100%;
-  font-size: 25pt;
+  font-size: 20pt;
   border-collapse: separate;
   border-spacing: 0.3em;
 }
