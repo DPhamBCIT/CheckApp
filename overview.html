@@ -42,7 +42,7 @@
                     <img alt = "appName" id = "icons" src = "images/app_icon1.jpg"/>
                   </td>
                   <td class = "inner">
-                    <p>MAJESTY</p>
+                    <p id = "srcGame"></p>
                     <p><i>Strategy, Hero, Tower Defense</i></p>
                   </td>
                 </tr>
@@ -111,6 +111,10 @@
       messagingSenderId: "385146664281"
       };
       firebase.initializeApp(config);
+		
+	  var srcGame = document.getElementById("srcGame");
+	  var gRef = firebase.database().ref().child('game').child("name");
+      gRef.on('value', snap => srcGame.innerText = snap.val());
     </script>
     
   </body>
