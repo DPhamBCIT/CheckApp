@@ -135,18 +135,18 @@
         };
         firebase.initializeApp(config);
 		  
-		var app1 = document.getElementById("app1");
-		var app2 = document.getElementById("app2");
-		var app3 = document.getElementById("app3");
-    var app4 = document.getElementById("app4");
-		var aRef1 = firebase.database().ref().child('recGame').child("game1").child("name");
-		var aRef2 = firebase.database().ref().child('recGame').child("game2").child("name");
-		var aRef3 = firebase.database().ref().child('recGame').child("game3").child("name");
-    var aRef4 = firebase.database().ref().child('recGame').child("game3").child("name");
-		aRef1.on('value', snap => app1.innerText = snap.val());
-		aRef2.on('value', snap => app2.innerText = snap.val());
-		aRef3.on('value', snap => app3.innerText = snap.val());
-    aRef4.on('value', snap => app3.innerText = snap.val());
+        var app1 = document.getElementById("app1");
+        var app2 = document.getElementById("app2");
+        var app3 = document.getElementById("app3");
+        var app4 = document.getElementById("app4");
+        var aRef1 = firebase.database().ref().child('recGame').child("game1").child("name");
+        var aRef2 = firebase.database().ref().child('recGame').child("game2").child("name");
+        var aRef3 = firebase.database().ref().child('recGame').child("game3").child("name");
+        var aRef4 = firebase.database().ref().child('recGame').child("game4").child("name");
+        aRef1.on('value', snap => app1.innerText = snap.val());
+        aRef2.on('value', snap => app2.innerText = snap.val());
+        aRef3.on('value', snap => app3.innerText = snap.val());
+        aRef4.on('value', snap => app4.innerText = snap.val());
 		  
       </script>
   </body>
