@@ -4,10 +4,6 @@ body {
   background-color: #002138;
 }
 
-body * {
-  border: solid 1px red;
-}
-
 #container {
   max-width: 1280px;
   margin: 0 auto;
@@ -23,42 +19,82 @@ table{
 
 #rec {
   margin: auto;
-  width: 95%;	
+  width: 100%;
+  border-spacing: 1em;
 }
 
-p {
+#content {
   font-family: "Cuprum";
-  font-size: 30px;
   color: #FFFFFF;
+  margin-top: 3em;
 }
 
-.headers {
-  position: relative;
-  text-align: left;
-  top: -18px;
-  left: 20px;
-}			
+#total_score {
+  font-size: 30pt;
+}
 
-#icons {				
-  width: 150px;
-  height: 150px;				
-  position: relative;				
-  margin-top: 180px;
-  margin-left: 15px;
-  top: -180px;
+.subheading {
+  margin-top: 1em;
+  font-size: 25pt;
+  text-align: left;
+}
+
+#info, #review, #recommend {
+  margin-top: 1em;
+}
+
+#review td:nth-of-type(2) {
+  vertical-align: top;
+}
+
+#srcGame {
+  font-size: 30pt;
+  margin-bottom: 0.5em;
+}
+
+#tag {
+  font-size: 24pt;
+}
+
+#heading {
+  font-size: 45pt;
+}
+
+.info {
+  border: solid 4px white;
+  border-radius: 2em;
+}
+
+.info td:nth-of-type(1) {
+  width: 30%;
+}
+
+#icon {				
+  width: 8em;
+  height: 8em;
+  margin-left: 1.6em;
 }			
 
 #rec td {				
   border-radius: 1em;
   background-color: lightslategray;
+  text-align: left;
 }
 
-.recApp {
-  position: relative;
-  top: 3px;				
-  width: 100px;
-  height: 100px;								
-}	
+#rec td > * {
+  vertical-align: middle;
+}
+
+.recApp {		
+  width: 6em;
+  height: 6em;	
+  border-radius: 1.2em;
+  margin: 0.3em 4em 0.3em 0.3em;
+}
+
+#rec span {		
+  font-size: 20pt;
+}
 
 #top_table td {
   font-family: "Cuprum";
@@ -67,29 +103,51 @@ p {
 }
 
 #ratings{
-  font-size: 85px;
-  position: relative;
-  top: -130px;
-  left: 15px;				
-  margin-top: 125px;
+  font-size: 50pt;
+  text-align: center;
+}
+
+#more_review {
+  font-size: 18pt;
+  float: right;
+}
+
+#more_review span {
+  vertical-align: top;
+}
+
+#more_review img {
+  font-size: 20pt;
+}
+
+#more_recommend {
+  font-size: 18pt;
+  float: right;
+}
+
+#more_recommend span {
+  vertical-align: top;
+}
+
+#more_recommend img {
+  font-size: 20pt;
+}
+
+.comment {
+  font-size: 24pt;
+  margin-top: 0.9em;
 }
 
 .outer {
-  font-family: 'Cuprum', sans-serif;
-  font-size: 23px;
-  color: #FFFFFF;
-  border: 1.5pt solid white;				
-  border-radius: 1em;
-  position: relative;				
+  font-family: "Cuprum";
+  color: #FFFFFF;			
   text-align: right;				
-  width: 50%;
-  top: -35px;				
+  width: 45%;
 }
 
-.inner p{
-  position: relative;				
-  text-align: left;			
-  top: -100px;
+.inner {
+  height: 10em;  
+  text-align: left;
 }
 
 #home {
@@ -97,12 +155,10 @@ p {
 }
 
 #home div {
-  position: relative;
   height: 1em;
 }
 
 #home img {	
-  position: relative;
   height: 1em;
   margin-right: 0.3em;        
 }
@@ -148,12 +204,6 @@ p {
   width: 98%;
 }
 
-#notif {
-  font-size: 35px;
-  position: relative;
-  top: -35px;
-}
-
 a {
   color: white;
   text-decoration: none;
@@ -161,4 +211,32 @@ a {
 
 a:hover {
   color: orange;
+}
+
+#nav_review img {
+  position: relative;
+  height: 1em;
+  margin-right: 0.3em;
+}
+
+#nav_review a:hover .img_hover {
+  display: inline-block;
+}
+
+#nav_review a:hover .img_normal {
+  display: none;
+}
+
+#nav_recommend img {
+  position: relative;
+  height: 1em;
+  margin-right: 0.3em;
+}
+
+#nav_recommend a:hover .img_hover {
+  display: inline-block;
+}
+
+#nav_recommend a:hover .img_normal {
+  display: none;
 }
