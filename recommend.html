@@ -48,7 +48,7 @@
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon1.jpg"/>
-                  <div>Cool App</div>
+                  <div id="app1"></div>
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon2.jpg"/>
@@ -123,5 +123,24 @@
       </div>
     
     </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBvI9C9xDjGb5c8exGw5OiNduMWQFf-0dY",
+        authDomain: "checkapp-data.firebaseapp.com",
+        databaseURL: "https://checkapp-data.firebaseio.com",
+        projectId: "checkapp-data",
+        storageBucket: "checkapp-data.appspot.com",
+        messagingSenderId: "385146664281"
+      };
+      firebase.initializeApp(config);
+      
+      var app1 = document.getElementByID("app1");
+      var appRef1 = firebase.database().ref().child('recGame').child('game1').child('name');
+      appRef1.on('value', snap => app1.innerText = snap.val());
+    </script>
+    
   </body>
 </html>
