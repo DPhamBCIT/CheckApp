@@ -2,21 +2,19 @@
 <html>
   <head>
     <meta charset = "UTF-8">
-    <title>CheckApp</title>
-    <link rel="stylesheet" href="./css/style_recommend.css">
-		  
+    <title>CheckApp - Recommend</title>
+    <link rel="stylesheet" href="./css/style_recommend.css">		  
 		</style>
   </head>
   <body>
     <div id="container">
-    
       <div id="top">
         <table id="top_table">
           <tbody>
             <tr>
               <td id="back">
                 <div>
-                  <a href="main.html">
+                  <a href="overview.html">
                     <img class="img_normal" alt="back" src="images/arrow_left.png"/>
                     <img class="img_hover" alt="back" src="images/arrow_left_orange.png"/>
                   </a>
@@ -48,7 +46,7 @@
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon1.jpg"/>
-                  <div>Cool App</div>
+                  <div id = "app1">66</div>
                 </td>
                 <td class="apps">
                   <img alt="App" src="images/app_icon2.jpg"/>
@@ -123,5 +121,24 @@
       </div>
     
     </div>
+	  
+	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyBvI9C9xDjGb5c8exGw5OiNduMWQFf-0dY",
+        authDomain: "checkapp-data.firebaseapp.com",
+        databaseURL: "https://checkapp-data.firebaseio.com",
+        projectId: "checkapp-data",
+        storageBucket: "checkapp-data.appspot.com",
+        messagingSenderId: "385146664281"
+        };
+        firebase.initializeApp(config);
+		  
+		var app1 = document.getElementById("app1");
+		var aRef = firebase.database().ref().child('recGame').child("game1").child("name");
+		aRef.on('value', snap => app1.innerText = snap.val());
+		  
+      </script>
   </body>
 </html>
