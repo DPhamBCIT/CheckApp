@@ -132,7 +132,7 @@ p {
 }
 
 .rectangle p {
-	transform:translate(-30px,-22px);
+	transform:translate(-30px, 13px);
 }
 
 #page {

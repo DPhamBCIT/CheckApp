@@ -35,7 +35,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (document.referrer.indexOf(window.location.host) !== -1) {
       history.go(-1);
     } else {
-      window.location.href = 'main.html';
+      window.location.href = 'index.html';
     }
   } else {
     // User is signed out.
