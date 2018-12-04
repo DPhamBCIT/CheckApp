@@ -47,8 +47,8 @@
         </div>
         <div id="quote">Find the <span>Right</span> Game</div>
         <div class="search">
-          <input type="text" placeholder="Search">
-          <button type="submit"><img alt="Search" src="images/search.png"/></button>
+          <input id="search_box" type="text" placeholder="Search">
+          <button id="search_button" type="submit"><img alt="Search" src="images/search.png"/></button>
         </div>
       </div>
     
@@ -74,6 +74,18 @@
           $("#logout").hide();
           $("#bar").hide();
           $("#user").hide();
+        }
+      });
+      
+      $("#search_button").click(function (event) {
+        if ($("#search_box").val() != "") {
+          window.location.href = "overview.html";
+        }
+      });
+      
+      $("#search_box").on("keypress", function (event) {
+        if (event.keyCode == 13 && $("#search_box").val() != "") {
+          window.location.href = "overview.html";
         }
       });
       
