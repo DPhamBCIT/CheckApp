@@ -86,6 +86,10 @@ p {
   font-size: 20pt;
   width: 98%;
 }
+
+#comment {
+  font-size: 20pt;
+}
 	
 .bodysection {
   width: 33%;

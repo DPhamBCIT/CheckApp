@@ -42,6 +42,12 @@ var threes = 0;
 var twos = 0;
 var ones = 0;
 
+$("#comment").on("keypress", function (event) {
+  if (event.keyCode == 13 && $("#comment").val() != "") {
+    firebase.database().ref("recGame/game1/comment").set($("#comment").val());
+  }
+});
+
 function edit() {
   document.getElementById("star1").onmouseover = function() {starhover(1)};
   document.getElementById("star2").onmouseover = function() {starhover(2)};
