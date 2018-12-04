@@ -6,19 +6,7 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="./css/style_main.css">
     
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDC_mefT3aFXROFBI4MHle7eBvI5Rj5zG0",
-        authDomain: "nov15-27f6e.firebaseapp.com",
-        databaseURL: "https://nov15-27f6e.firebaseio.com",
-        projectId: "nov15-27f6e",
-        storageBucket: "nov15-27f6e.appspot.com",
-        messagingSenderId: "373575545421"
-      };
-      firebase.initializeApp(config);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
         
   </head>
   <body>
@@ -53,43 +41,8 @@
       </div>
     
     </div>
-    
-    <script>
-    
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var email = user.email;
-          $("#user").html(email);
-          $("#login").hide();
-          $("#logout").show();
-          $("#bar").show();
-          $("#logout > a").click(function (event) {
-            event.preventDefault();
-            console.log("login");
-            firebase.auth().signOut();
-          });
-        } else {
-          $("#login").show();
-          $("#logout").hide();
-          $("#bar").hide();
-          $("#user").hide();
-        }
-      });
-      
-      $("#search_button").click(function (event) {
-        if ($("#search_box").val() != "") {
-          window.location.href = "overview.html";
-        }
-      });
-      
-      $("#search_box").on("keypress", function (event) {
-        if (event.keyCode == 13 && $("#search_box").val() != "") {
-          window.location.href = "overview.html";
-        }
-      });
-      
-    </script>
+
+    <script src="js/main.js"></script>
     
   </body>
 </html>

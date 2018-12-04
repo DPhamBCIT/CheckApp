@@ -10,28 +10,12 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDC_mefT3aFXROFBI4MHle7eBvI5Rj5zG0",
-        authDomain: "nov15-27f6e.firebaseapp.com",
-        databaseURL: "https://nov15-27f6e.firebaseio.com",
-        projectId: "nov15-27f6e",
-        storageBucket: "nov15-27f6e.appspot.com",
-        messagingSenderId: "373575545421"
-      };
-      firebase.initializeApp(config);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     
   </head>
-  <body id="firebaseui-auth-container">
+  <body>
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    </script>
   
     <header>
       <div id="loader">Loading the login screen...</div>
@@ -55,48 +39,11 @@
       </div>
       
       <div id="content">
-
       </div>
     
     </div>
     
-    <footer>
-    </footer>
-    
-    <script>
-    
-      var uiConfig = {
-        callbacks: {
-          uiShown: function() {
-            // The widget is rendered.
-            // Hide the loader.
-            document.getElementById('loader').style.display = 'none';
-          }
-        },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: 'popup',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ]
-      };
-      
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var email = user.email;
-          if (document.referrer.indexOf(window.location.host) !== -1) {
-            history.go(-1);
-          } else {
-            window.location.href = 'main.html';
-          }
-        } else {
-          // User is signed out.
-          ui.start('#content', uiConfig);
-        }
-      });
-    
-    </script>
+    <script src="js/login.js"></script>
     
   </body>
 </html>

@@ -6,19 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/style_recommend.css">		  
 		
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDC_mefT3aFXROFBI4MHle7eBvI5Rj5zG0",
-        authDomain: "nov15-27f6e.firebaseapp.com",
-        databaseURL: "https://nov15-27f6e.firebaseio.com",
-        projectId: "nov15-27f6e",
-        storageBucket: "nov15-27f6e.appspot.com",
-        messagingSenderId: "373575545421"
-      };
-      firebase.initializeApp(config);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     
   </head>
   <body>
@@ -38,7 +26,7 @@
                   </a>
                 </div>
               </td>
-              <td><input type="text" id="search" placeholder="Search"/></td>
+              <td><input id="search" type="text" placeholder="Search"/></td>
               <td id="user"></td>
               <td id="bar">|</td>
               <td id="login"><a class="link" href ="login.html">Login</a></td>
@@ -64,12 +52,16 @@
                   </div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon1.jpg"/>
-                  <div id="app1"></div>
+                  <div id="free_app1_third" class="score"></div>
+                  <img id="free_app1_image" alt="App" src=""/>
+                  <div id="free_app1_first" class="name"></div>
+                  <div id="free_app1_second" class="tag"></div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon2.jpg"/>
-                  <div id="app2"></div>
+                  <div id="free_app2_third" class="score"></div>
+                  <img id="free_app2_image" alt="App" src=""/>
+                  <div id="free_app2_first" class="name"></div>
+                  <div id="free_app2_second" class="tag"></div>
                 </td>
                 <td class="nav_holder" rowspan="2">
                   <div>
@@ -82,12 +74,16 @@
               </tr>
               <tr>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon3.jpg"/>
-                  <div id="app3"></div>
+                  <div id="free_app3_third" class="score"></div>
+                  <img id="free_app3_image" alt="App" src=""/>
+                  <div id="free_app3_first" class="name"></div>
+                  <div id="free_app3_second" class="tag"></div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon4.jpg"/>
-                  <div id="app4"></div>
+                  <div id="free_app4_third" class="score"></div>
+                  <img id="free_app4_image" alt="App" src=""/>
+                  <div id="free_app4_first" class="name"></div>
+                  <div id="free_app4_second" class="tag"></div>
                 </td>
               </tr>
             </tbody>
@@ -108,12 +104,16 @@
                   </div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon1.jpg"/>
-                  <div>Cool App</div>
+                  <div id="paid_app1_third" class="score"></div>
+                  <img id="paid_app1_image" alt="App" src=""/>
+                  <div id="paid_app1_first" class="name"></div>
+                  <div id="paid_app1_second" class="tag"></div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon2.jpg"/>
-                  <div>Cool App</div>
+                  <div id="paid_app2_third" class="score"></div>
+                  <img id="paid_app2_image" alt="App" src=""/>
+                  <div id="paid_app2_first" class="name"></div>
+                  <div id="paid_app2_second" class="tag"></div>
                 </td>
                 <td class="nav_holder" rowspan="2">
                   <div>
@@ -126,12 +126,16 @@
               </tr>
               <tr>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon3.jpg"/>
-                  <div>Cool App</div>
+                  <div id="paid_app3_third" class="score"></div>
+                  <img id="paid_app3_image" alt="App" src=""/>
+                  <div id="paid_app3_first" class="name"></div>
+                  <div id="paid_app3_second" class="tag"></div>
                 </td>
                 <td class="apps">
-                  <img alt="App" src="images/app_icon4.jpg"/>
-                  <div>Cool App</div>
+                  <div id="paid_app4_third" class="score"></div>
+                  <img id="paid_app4_image" alt="App" src=""/>
+                  <div id="paid_app4_first" class="name"></div>
+                  <div id="paid_app4_second" class="tag"></div>
                 </td>
               </tr>
             </tbody>
@@ -140,43 +144,8 @@
       </div>
     
     </div>
-	  
-    <script>
     
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var email = user.email;
-          $("#user").html(email);
-          $("#login").hide();
-          $("#logout").show();
-          $("#bar").show();
-          $("#logout > a").click(function (event) {
-            event.preventDefault();
-            console.log("login");
-            firebase.auth().signOut();
-          });
-        } else {
-          $("#login").show();
-          $("#logout").hide();
-          $("#bar").hide();
-          $("#user").hide();
-        }
-      });
-    
-      var app1 = document.getElementById("app1");
-      var app2 = document.getElementById("app2");
-      var app3 = document.getElementById("app3");
-      var app4 = document.getElementById("app4");
-      var aRef1 = firebase.database().ref().child('recGame').child("game1").child("name");
-      var aRef2 = firebase.database().ref().child('recGame').child("game2").child("name");
-      var aRef3 = firebase.database().ref().child('recGame').child("game3").child("name");
-      var aRef4 = firebase.database().ref().child('recGame').child("game4").child("name");
-      aRef1.on('value', snap => app1.innerText = snap.val());
-      aRef2.on('value', snap => app2.innerText = snap.val());
-      aRef3.on('value', snap => app3.innerText = snap.val());
-      aRef4.on('value', snap => app4.innerText = snap.val());
-    
-    </script>
+    <script src="js/recommend.js"></script>
+
   </body>
 </html>

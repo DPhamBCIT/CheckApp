@@ -9,10 +9,6 @@ body {
   background-color: #002138;
 }
 
-body * {
-  border: solid 1px red;
-}
-
 #container {
   max-width: 1280px;
   margin: 0 auto;
@@ -72,7 +68,7 @@ a.link:hover {
   color: white;
   font-family: "Cuprum";
   font-size: 25pt;
-  margin: 0.3em;
+  margin-bottom: 1em;
 }
 
 #quote span {
@@ -85,22 +81,22 @@ a.link:hover {
   display: inline-block;
 }
 
-.search input[type=text] {
+#search_box {
   padding: 6px;
   height: 40px;
   width: 81%;
   border: none;
   font-size: 20pt;
-  font-family: "Calibri";
+  font-family: "Cuprum";
 }
 
-.search button {
+#search_button {
   background-color: #ffffff;
   border: none;
   cursor: pointer;
   vertical-align: top;
 }
 
-.search img {
+#search_button img {
   height: 46px;
 }
